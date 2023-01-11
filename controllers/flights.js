@@ -7,6 +7,11 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
+  console.log('Initial req.body', req.body)
+  for (let key in req.body) {
+    if ( req.body[key] === '') delete req.body[key]
+  }
+  console.log('After for, in loop', req.body)
   Flight.create(req.body)
   .then(flight => {
     console.log(flight);
