@@ -22,7 +22,7 @@ const flightSchema = new Schema({
     default: function defaultDeparture() {
       today = new Date()
       aYearFromToday = today.getFullYear() + 1
-      today.setFullYear(oneYearLater)
+      today.setFullYear(aYearFromToday)
       return today
   }},
   
