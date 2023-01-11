@@ -6,9 +6,14 @@ const router = Router()
 // GET localhost:3000/flights
 router.get('/', flightsCtrl.index)
 
+// GET localhost:3000/flights/new
 router.get('/new', flightsCtrl.new)
 
+// POST localhost:3000/flights
 router.post('/', flightsCtrl.create)
+
+// DELETE localhost:3000/flights/:id
+router.delete("/:id", flightsCtrl.delete)
 
 export {
   router
