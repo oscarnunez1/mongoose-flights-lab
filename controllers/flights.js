@@ -38,6 +38,7 @@ function index(req, res) {
 }
 
 function deleteFlight(req, res) {
+  console.log("Deleting Flight", req.body)
   Flight.findByIdAndDelete(req.params.id)
   .then(flight => {
     res.redirect("/flights")
