@@ -7,7 +7,6 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-  console.log("Im creating something")
   Flight.create(req.body)
   .then(flight => {
     console.log(flight);
