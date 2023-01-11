@@ -13,7 +13,9 @@ router.get('/new', flightsCtrl.new)
 router.post('/', flightsCtrl.create)
 
 // DELETE localhost:3000/flights/:id
-router.delete("/:id", flightsCtrl.delete)
+router.delete('/:id', flightsCtrl.delete)
+
+router.get('/:id', flightsCtrl.show)
 
 export {
   router

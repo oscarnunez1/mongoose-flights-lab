@@ -49,9 +49,20 @@ function deleteFlight(req, res) {
   })
 }
 
+function show(req, res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/show', {
+      title: 'Flight Details',
+      flight: flight,
+    })
+  })
+}
+
 export {
   newFlight as new,
   index,
   create,
   deleteFlight as delete,
+  show,
 }
