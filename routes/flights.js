@@ -19,7 +19,7 @@ router.get('/:id', flightsCtrl.show)
 
 router.get('/:id/edit', flightsCtrl.edit)
 
-router.get('/:id', flightsCtrl.update)
+router.put('/:id', flightsCtrl.update)
 
 export {
   router
