@@ -21,11 +21,12 @@ const flightSchema = new Schema({
   departs: {
     type: Date, 
     default: function() {
-      let today = new Date()
+      const today = new Date()
       console.log("today's date", today);
-      let year = today.getFullYear()
-      console.log("Current year", year + 1);
-      return year + 1
+      const aYearLater = today.getFullYear() + 1
+      today.setFullYear(aYearLater)
+      return today
+
     }
   }
 })
