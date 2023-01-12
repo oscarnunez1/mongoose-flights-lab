@@ -17,6 +17,10 @@ router.delete('/:id', flightsCtrl.delete)
 
 router.get('/:id', flightsCtrl.show)
 
+router.get('/:id/edit', flightsCtrl.edit)
+
+router.get('/:id', flightsCtrl.update)
+
 export {
   router
 }
