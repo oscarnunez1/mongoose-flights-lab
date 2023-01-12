@@ -28,7 +28,7 @@ function index(req, res) {
   .then(flights => {
     res.render('flights/index', {
       flights: flights,
-      title: "All Flights"
+      title: "Flight List"
     })
   })
   .catch(err => {
