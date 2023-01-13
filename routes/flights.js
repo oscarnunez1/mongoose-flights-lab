@@ -14,6 +14,7 @@ router.get('/:id/edit', flightsCtrl.edit)
 
 router.put('/:id', flightsCtrl.update)
 router.delete('/:id', flightsCtrl.delete)
+router.delete('/:flightId/tickets/:ticketId', flightsCtrl.deleteTicket)
 
 
 export {
