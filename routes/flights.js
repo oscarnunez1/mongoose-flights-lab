@@ -5,6 +5,7 @@ const router = Router()
 
 router.post('/', flightsCtrl.create)
 router.post('/:id/tickets', flightsCtrl.createTicket)
+router.post('/:id/meals', flightsCtrl.addToMeals)
 
 router.get('/', flightsCtrl.index)
 router.get('/new', flightsCtrl.new)
