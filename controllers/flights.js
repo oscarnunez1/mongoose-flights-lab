@@ -50,26 +50,49 @@ function deleteFlight(req, res) {
   })
 }
 
+// function show(req, res) {
+//   Flight.findById(req.params.id)
+//   .populate('meals')
+//   .then(flight => {
+//     Meal.find({})
+//     .then(meals => {
+//       res.render('flights/show', {
+//         title: 'Flight Details',
+//         flight: flight,
+//         meals
+//       })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       res.redirect('/flights')
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/flights')
+//   })
+// }
+
 function show(req, res) {
   Flight.findById(req.params.id)
   .populate('meals')
   .then(flight => {
-    Meal.find({})
-    .then(meals => {
+    Meal.find({ _id: {$nin: flight.meals} })
+    .then(mealsNotInMeals => {
       res.render('flights/show', {
-        title: 'Flight Details',
+        title: "Flight Details",
         flight: flight,
-        meals
+        mealsNotInMeals
       })
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/flights')
+      res.redirect("/flights")
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/flights')
+    res.redirect("/flights")
   })
 }
 
