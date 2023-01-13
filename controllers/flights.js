@@ -8,7 +8,6 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-  console.log('Initial req.body', req.body)
   for (let key in req.body) {
     if ( req.body[key] === '') delete req.body[key]
   }
@@ -73,7 +72,6 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  console.log("Edit Flight");
   Flight.findById(req.params.id)
   .then(flight => {
     res.render("flights/edit", {
@@ -102,7 +100,6 @@ function update(req, res) {
 }
 
 function createTicket(req, res) {
-  console.log("Creating a ticket!")
   Flight.findById(req.params.id)
   .then(flight => {
     flight.tickets.push(req.body)
